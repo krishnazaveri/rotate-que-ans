@@ -11,6 +11,7 @@
             width: 400px;
             border: 2px solid coral;
             position: relative;
+            overflow: hidden;
         }
 
         .ans {
@@ -20,6 +21,17 @@
             position: absolute;
             top: 0px;
             left: 402px;
+            transition: 1s;
+        }
+
+        .ans1 {
+            height: 500px;
+            width: 300px;
+            background-color: lightblue;
+            position: absolute;
+            top: 0px;
+            left: 402px;
+            transition: 1s;
         }
 
         
@@ -29,20 +41,33 @@
 <body>
 
     <div class="main">
-       <p>Question <button id="b1" onclick="btnshw()"> ^ </button></p>
+       <p>Question 1 <button id="b1" onclick="btnshw()"> ^ </button></p>
        <div class="ans">Answer 1</div>
+
+       <p>Question 2 <button id="b2" onclick="btnshw1()"> ^ </button></p>
+       <div class="ans1">Answer 2</div>
       
     </div>
 
     <script>
         show= document.getElementById('b1');
-        a1=document.getElementsByClassName('ans');
+        a1=document.querySelector('.ans');
+
+        show1=document.getElementById('b2');
+        a2=document.querySelector('.ans1');
+
 
         function btnshw()
         {
-            a1.style.left="100%"
+            a1.style.left="100px";
+            a2.style.left="402px";
         }
 
+        function btnshw1()
+        {
+            a2.style.left="100px";
+            a1.style.left="402px";
+        }
         
     </script>
     
